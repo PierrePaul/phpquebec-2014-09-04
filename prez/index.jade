@@ -1,0 +1,99 @@
+doctype html
+html
+    head
+        title PHPQuébec - Vagrant, c'est quoi?
+        meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+        link(href="/css/prez.css",rel="stylesheet")
+        link(href='//fonts.googleapis.com/css?family=Ubuntu',rel='stylesheet' type='text/css')
+        link(href='//fonts.googleapis.com/css?family=Ubuntu+Mono',rel='stylesheet',type='text/css')
+        script(src="/js/jquery.min.js")
+        script(src="/js/attrchange.js", type="text/javascript")
+        script(src="/js/prez.js")
+    body
+        div.top
+          span.name Pierre Paul Lefebvre
+          span.usergroup PHPQuébec
+        div#impress
+            div.step(data-x="0" data-y="0", class="slide")
+              h1 Vagrant, c'est quoi? 
+
+            div.step(data-x="1000" data-y="0", class="slide")
+              h2 Open-Source!
+              img.happy-dog(src="/images/happy-dog.jpg")
+              a(href="https://www.flickr.com/photos/bs/3606756730") Creative Commons, Britt Selvitelle
+
+            div.step(data-x="2000" data-y="0", class="slide")
+              h2 Machines virtuelles 
+              p Définition #TODO
+
+            div.step(data-x="3000" data-y="0", class="slide")
+              h2 Environnement
+
+            div.step(data-x="3000" data-y="1000", class="slide")
+              h2 Plus sécuritaire
+              p Infrastructure en code = ♡
+              p Facile d'avoir un topo complet et rend l'analyse de l'architecture beaucoup plus simple.
+
+            div.step(data-x="3000" data-y="2000", class="slide")
+              h2 Reproduisible
+              p N'importe qui peut prendre le projet et le faire rouler sur sa machine. Sans connaître en détail chaque pièce de l'infrastructure.
+
+            div.step(data-x="3000" data-y="3000", class="slide")
+              h2 Facile à déplacer
+              img.moving-boxes(src="images/moving-boxes.jpg")
+              span 
+                | Moving boxes &copy 
+                a(href="https://www.flickr.com/people/nathanoliverphotography/", target="blank") Nathan Oliver Photography,
+                | Creative Commons
+              
+            div.step(data-x="4000" data-y="0", class="slide")
+              h2 Installation
+              p Binaires pour presque toutes les plateformes!
+              a(href="http://www.vagrantup.com/downloads.html") VagrantUp
+
+            div.step(data-x="5000" data-y="0", class="slide")
+              h2 Notions de base
+              ul
+                li Boxes
+                li Provider
+                li Provisioning
+                li Multi-machine
+                li Synced folders
+                li Debugging
+
+            div.step(data-x="5000" data-y="1000", class="slide")
+              h2 Boxes
+              p #TODO
+
+            div.step(data-x="5000" data-y="2000", class="slide")
+              h2 Provider
+              p #TODO
+
+            div.step(data-x="5000" data-y="3000", class="slide")
+              h2 Provisioning
+              p #TODO
+
+            div.step(data-x="5000" data-y="4000", class="slide")
+              h2 Multi-machine
+              p #TODO
+
+            div.step(data-x="5000" data-y="5000", class="slide")
+              h2 Synced folders
+              p #TODO
+
+            div.step(data-x="5000" data-y="6000", class="slide")
+              h2 Debugging
+              p #TODO
+
+            div.step(data-x="6000" data-y="0", class="slide")
+              h2 Première demo
+              div.terminal(id="boxes")
+                header
+                    h4 Terminal
+                div.terminal-content
+              button.start(onclick="")
+                | Start
+
+
+        script(type="text/javascript",src="js/impress.js")
+        script impress().init();
