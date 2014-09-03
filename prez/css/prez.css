@@ -28,7 +28,9 @@ body {
     line-height: 1;
 }
 ol, ul {
-    list-style: none;
+    padding-left:10%;
+    padding-top:10px;
+    padding-bottom:10px;
 }
 blockquote, q {
     quotes: none;
@@ -217,3 +219,31 @@ button.start {
 }
 .impress-enabled          { pointer-events: none }
 .impress-enabled #impress { pointer-events: auto }
+
+.vjs-default-skin .vjs-play-progress,
+.vjs-default-skin .vjs-volume-level { background-color: #000000 }
+.vjs-default-skin .vjs-control-bar { font-size: 65% }
+img.lawrence {
+    float:right;
+}
+img.vagrant {
+    margin-left:10px;
+    margin-top:10px;
+}
+pre {
+    font-family: 'Ubuntu Mono';
+    color:white;
+    background-color:black;
+    padding:10px;
+    margin: 10px 0;
+}
+p.courriel {
+    margin-top:30px;
+}
+img.phpquebec {
+    width:45%;
+    float:left;
+}
+img.lvh {
+    float:right;
+}

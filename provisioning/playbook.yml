@@ -28,10 +28,9 @@
       with_items:
         - python-dev
         - python-pip
-       
-    - name: install moar basic packages
-      pip: name={{ item }} state=present
-      with_items:
-        - ipython
-        - pyjade
 
+    - name: install jade with npm instead of apt
+      npm: name=jade state=present global=yes
+
+    - name: fix the nodejs link in ubuntu
+      file: src=/usr/bin/nodejs dest=/usr/bin/node state=link

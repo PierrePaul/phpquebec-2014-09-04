@@ -7,8 +7,8 @@ html
         link(href='//fonts.googleapis.com/css?family=Ubuntu',rel='stylesheet' type='text/css')
         link(href='//fonts.googleapis.com/css?family=Ubuntu+Mono',rel='stylesheet',type='text/css')
         script(src="/js/jquery.min.js")
-        script(src="/js/attrchange.js", type="text/javascript")
         script(src="/js/prez.js")
+        link(href="//vjs.zencdn.net/4.7/video-js.css", rel="stylesheet")
     body
         div.top
           span.name Pierre Paul Lefebvre
@@ -24,10 +24,15 @@ html
 
             div.step(data-x="2000" data-y="0", class="slide")
               h2 Machines virtuelles 
-              p Définition #TODO
+              p Une marchine qui roue sur votre propre marchine.
+              p Par exemple, une machine Linux fonctionne en même temps que votre MacOS.
+              hr
+              img(src="/images/inception.jpg", width="100%")
 
             div.step(data-x="3000" data-y="0", class="slide")
               h2 Environnement
+              p Vagrant permet d'avoir un environnement identique à la production.
+              img.lawrence(src="/images/jennifer-lawrence-thumbs-up.gif", width="400px")
 
             div.step(data-x="3000" data-y="1000", class="slide")
               h2 Plus sécuritaire
@@ -63,37 +68,148 @@ html
 
             div.step(data-x="5000" data-y="1000", class="slide")
               h2 Boxes
-              p #TODO
+              p Chaque machine virtuelle se sert d'une boite de départ avec le bon système d'exploitation pré-installé, mais généralement non-configuré.
 
             div.step(data-x="5000" data-y="2000", class="slide")
               h2 Provider
-              p #TODO
+              p Peut être vu comme le "backend" pour les boîtes. Vagrant vient généralement avec Virtualbox comme provider par défaut, mais beaucoup d'autres existent.
+              ul
+                li Digital Ocean
+                li Amazon Web Services (AWS)
+                li LXC
+                li Docker
+                li VMWare fusion
+                li VMWare ESXI (vSphere)
+                li etc.
+              p Certains viennent avec Vagrant, d'autres doivent être installé en tant que plugin.
+              hr
+              pre vagrant plugin install vagrant-lxc
 
             div.step(data-x="5000" data-y="3000", class="slide")
               h2 Provisioning
-              p #TODO
+              p Scripts et ou systèmes qui vont être utilisés pour configurer votre machine virtuelle.
+              ul
+                li Chef
+                li Puppet
+                li Ansible ♥
+                li Shell
+                li CFEngine
+                li Docker
+                li Salt
+                li etc.
 
             div.step(data-x="5000" data-y="4000", class="slide")
               h2 Multi-machine
-              p #TODO
+              p Il est possible avec Vagrant de gérer plusieurs machines à l'intérieur d'un même projet Vagrant.
+              p Très utile pour des architectures plus complexes.
+              img.vagrant(src="/images/project-vagrant-xyz.png")
 
             div.step(data-x="5000" data-y="5000", class="slide")
               h2 Synced folders
-              p #TODO
-
-            div.step(data-x="5000" data-y="6000", class="slide")
-              h2 Debugging
-              p #TODO
+              p Permet de partager un ou des dossiers entre votre machine physique et votre machine virtuelle. 
+              p Très utile pour ceux qui veulent continuer d'utiliser Sublime plutôt que Vim/Emacs pour développer.
+              hr
+              pre config.vm.synced_folder "projects/", "/var/www/"
 
             div.step(data-x="6000" data-y="0", class="slide")
               h2 Première demo
-              div.terminal(id="boxes")
-                header
-                    h4 Terminal
-                div.terminal-content
-              button.start(onclick="")
-                | Start
+              p vagrant init (35s)
+              video(class="video-js vjs-default-skin", controls, preload="auto", width="100%", height="80%")
+                  source(src="/videos/demo-1.ogv", type='video/ogg')
 
+            div.step(data-x="6000" data-y="1000", class="slide")
+              h2 Deuxième demo
+              p Trouver une boîte vagrant (38s)
+              video(class="video-js vjs-default-skin", controls, preload="auto", width="100%", height="80%")
+                  source(src="/videos/demo-2.ogv", type='video/ogg')
+
+            div.step(data-x="6000" data-y="2000", class="slide")
+              h2 Troisième demo (3min18s)
+              p Ajouter la nouvelle boîte, vagrant up, vagrant ssh
+              video(class="video-js vjs-default-skin", controls, preload="auto", width="100%", height="80%")
+                  source(src="/videos/demo-3.ogv", type='video/ogg')
+
+            div.step(data-x="6000" data-y="3000", class="slide")
+              h2 Quatrième demo (1min6s)
+              p Provision : shell, inline
+              video(class="video-js vjs-default-skin", controls, preload="auto", width="100%", height="80%")
+                  source(src="/videos/demo-4-inline.ogv", type='video/ogg')
+
+            div.step(data-x="6000" data-y="4000", class="slide")
+              h2 Cinquième demo (2min7s)
+              p Provision : shell + ruby
+              video(class="video-js vjs-default-skin", controls, preload="auto", width="100%", height="80%")
+                  source(src="/videos/demo-4-full.ogv", type='video/ogg')
+
+            div.step(data-x="7000" data-y="0", class="slide")
+              h2 Use case: LVHockey
+              p Plateforme : Symfony2 (PHP)
+              img(src="/images/lvhockey.png", width="100%")
+
+            div.step(data-x="8000" data-y="0", class="slide")
+              h2 Petits conseils
+
+            div.step(data-x="8000" data-y="1000", class="slide")
+              h2 Utilisez les multi-machines
+              p Sans le savoir, peut-être qu'une nouvelle dépendance pour votre projet va agir différement si elle mise sur une autre machine.
+              p Si cette dépendance se trouve sur un autre serveur en production, séparer là dans votre projet Vagrant.
+
+            div.step(data-x="8000" data-y="2000", class="slide")
+              h2 Jouer avec les différentes options de provisioning
+              p Toutes les options sont différentes et tous les goûts sont dans la nature.
+              p Prennez un peu de temps pour trouver celle qui vous convient le mieux à vous et à votre entreprise.
+
+            div.step(data-x="8000" data-y="3000", class="slide")
+              h2 Symfony2
+              p Symfony, en mode débug, génère énormement de logs. En temps normal votre projet Symfony au complet sera en dossiers partagés avec votre machine physique. 
+              p Les dossiers partagés sont malheureusement très lents (selon le provider).
+              p Pour réduire le temps d'écriture au fichier de log de votre application, déplacer les logs ailleurs et/ou faite un lien.
+              hr
+              pre
+                | mv /var/www/project/app/logs /tmp/
+                | ln -s /var/www/project/app/logs /tmp/logs
+
+            div.step(data-x="8000" data-y="4000", class="slide")
+              h2 Debug
+              pre vagrant command --debug
+              hr
+              video(class="video-js vjs-default-skin", controls, preload="auto", width="100%", height="80%")
+                  source(src="/videos/debug.ogv", type='video/ogg')
+
+            div.step(data-x="8000" data-y="5000", class="slide")
+              h2 Variables d'environement
+              p Certaines valeurs vont changer entre certrains environements.
+              p Par exemple le mode debug va être désactivé pour Symfony.
+              p C'est possible de passer des variables d'environement directement au provisioning pour qu'il fasse son boulot proprement.
+              pre
+                | ansible.playbook = "provisioning/playbook.yml"
+                | ansible.extra_vars = {
+                |     "phero_environment" => ENV['ENVIRONMENT'],
+                |     "fqdn" => fqdn,
+                |     "domain" => domain,
+                |     "vagrant_provider" => provider
+                | }
+              pre
+                | ENVIRONEMENT=qa vagrant up
+              p Très utile avec Jenkins.
+
+            div.step(data-x="8000", data-y="6000", class="slide")
+                h2 Default provider
+                p Pour ceux qui décide de mettre VirtualBox de côté, vous pouvez changer votre provider par défaut via votre ~/.bashrc ou ~/.bash_profile
+                pre export VAGRANT_DEFAULT_PROVIDER='lxc'
+                p Dans ce cas ci, chaque machine va être démarrée avec LXC plutôt que VirtualBox.
+                p Gardez en tête que sur le poste de vos collègues, c'est toujours VirtualBox le défaut pour eux.
+
+            div.step(data-x="9000", data-y="0", class="slide")
+                h2 Questions?
+                p Présentation :
+                a(href="http://phpquebec-2014-09-04.pierre-paul.com") http://phpquebec-2014-09-04.pierre-paul.com
+                p.courriel Courriel : 
+                    a(href="https://www.pierre-paul.com/fr/#contact") info@pierre-paul.com
+                hr
+                h3 Merci!
+                img.phpquebec(src="/images/phpquebec.png")
+                img.lvh(src="/images/LVHbeta_small_fr.png")
 
         script(type="text/javascript",src="js/impress.js")
         script impress().init();
