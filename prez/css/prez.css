@@ -131,7 +131,7 @@ a:focus {
    transition: all 2000ms linear;
    width: 90%; 
 }
-.impress-on-step-2 .top, .impress-on-step-4 .top,  .impress-on-step-6 .top, .impress-on-step-8 .top, .impress-on-step-10 .top {
+.impress-on-step-2 .top, .impress-on-step-4 .top,  .impress-on-step-6 .top, .impress-on-step-8 .top, .impress-on-step-10 .top, .impress-on-step-12 .top, .impress-on-step-14 .top, .impress-on-step-16 .top, .impress-on-step-18 .top, .impress-on-step-20 .top, .impress-on-step-22 .top, .impress-on-step-24 .top, .impress-on-step-26 .top, .impress-on-step-28 {
    border-bottom: 1px solid #003C5C;
    transition: all 2000ms linear;
 }
