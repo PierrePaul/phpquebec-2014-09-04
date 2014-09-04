@@ -4,11 +4,9 @@ html
         title PHPQuébec - Vagrant, c'est quoi?
         meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
         link(href="/css/prez.css",rel="stylesheet")
-        link(href='//fonts.googleapis.com/css?family=Ubuntu',rel='stylesheet' type='text/css')
-        link(href='//fonts.googleapis.com/css?family=Ubuntu+Mono',rel='stylesheet',type='text/css')
         script(src="/js/jquery.min.js")
         script(src="/js/prez.js")
-        link(href="//vjs.zencdn.net/4.7/video-js.css", rel="stylesheet")
+        link(href="/css/video-js.css", rel="stylesheet")
     body
         div.top
           span.name Pierre Paul Lefebvre
@@ -24,8 +22,8 @@ html
 
             div.step(data-x="2000" data-y="0", class="slide")
               h2 Machines virtuelles 
-              p Une marchine qui roue sur votre propre marchine.
-              p Par exemple, une machine Linux fonctionne en même temps que votre MacOS.
+              p Une machine qui roule sur votre propre machine.
+              p Par exemple, une machine Linux fonctionne en même temps que votre MacOS ou votre Windows.
               hr
               img(src="/images/inception.jpg", width="100%")
 
@@ -81,7 +79,7 @@ html
                 li VMWare fusion
                 li VMWare ESXI (vSphere)
                 li etc.
-              p Certains viennent avec Vagrant, d'autres doivent être installé en tant que plugin.
+              p Certains viennent avec Vagrant, d'autres doivent être installés en tant que plugin.
               hr
               pre vagrant plugin install vagrant-lxc
 
@@ -152,7 +150,7 @@ html
             div.step(data-x="8000" data-y="1000", class="slide")
               h2 Utilisez les multi-machines
               p Sans le savoir, peut-être qu'une nouvelle dépendance pour votre projet va agir différement si elle mise sur une autre machine.
-              p Si cette dépendance se trouve sur un autre serveur en production, séparer là dans votre projet Vagrant.
+              p Si cette dépendance se trouve sur un autre serveur en production, séparez-la dans votre projet Vagrant.
 
             div.step(data-x="8000" data-y="2000", class="slide")
               h2 Jouer avec les différentes options de provisioning
@@ -161,9 +159,9 @@ html
 
             div.step(data-x="8000" data-y="3000", class="slide")
               h2 Symfony2
-              p Symfony, en mode débug, génère énormement de logs. En temps normal votre projet Symfony au complet sera en dossiers partagés avec votre machine physique. 
+              p Symfony, en mode débug, génère énormement de logs. En temps normal, votre projet Symfony au complet sera en dossiers partagés avec votre machine physique. 
               p Les dossiers partagés sont malheureusement très lents (selon le provider).
-              p Pour réduire le temps d'écriture au fichier de log de votre application, déplacer les logs ailleurs et/ou faite un lien.
+              p Pour réduire le temps d'écriture au fichier de log de votre application, déplacez les logs ailleurs et/ou faite un lien.
               hr
               pre
                 | mv /var/www/project/app/logs /tmp/
@@ -177,10 +175,10 @@ html
                   source(src="/videos/debug.ogv", type='video/ogg')
 
             div.step(data-x="8000" data-y="5000", class="slide")
-              h2 Variables d'environement
-              p Certaines valeurs vont changer entre certrains environements.
-              p Par exemple le mode debug va être désactivé pour Symfony.
-              p C'est possible de passer des variables d'environement directement au provisioning pour qu'il fasse son boulot proprement.
+              h2 Variables d'environnement
+              p Certaines valeurs vont changer entre certains environnements.
+              p Par exemple, le mode debug va être désactivé pour Symfony.
+              p C'est possible de passer des variables d'environnement directement au provisioning pour qu'il fasse son boulot proprement.
               pre
                 | ansible.playbook = "provisioning/playbook.yml"
                 | ansible.extra_vars = {
@@ -195,10 +193,10 @@ html
 
             div.step(data-x="8000", data-y="6000", class="slide")
                 h2 Default provider
-                p Pour ceux qui décide de mettre VirtualBox de côté, vous pouvez changer votre provider par défaut via votre ~/.bashrc ou ~/.bash_profile
+                p Pour ceux qui décident de mettre VirtualBox de côté, vous pouvez changer votre provider par défaut via votre ~/.bashrc ou ~/.bash_profile.
                 pre export VAGRANT_DEFAULT_PROVIDER='lxc'
                 p Dans ce cas ci, chaque machine va être démarrée avec LXC plutôt que VirtualBox.
-                p Gardez en tête que sur le poste de vos collègues, c'est toujours VirtualBox le défaut pour eux.
+                p Gardez en tête que sur le poste de vos collègues, c'est toujours VirtualBox le défaut.
 
             div.step(data-x="9000", data-y="0", class="slide")
                 h2 Questions?
@@ -211,5 +209,5 @@ html
                 img.phpquebec(src="/images/phpquebec.png")
                 img.lvh(src="/images/LVHbeta_small_fr.png")
 
-        script(type="text/javascript",src="js/impress.js")
+        script(type="text/javascript",src="/js/impress.js")
         script impress().init();
